@@ -1,0 +1,42 @@
+.task-modal-wrapper, .task-modal-content, .task-modal-content .labels {
+  display: flex;
+}
+
+.task-modal-wrapper {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+}
+
+.task-modal-content {
+  background-color: grey;
+  width: 50%;
+  border-radius: .3em;
+  justify-content: space-between;
+}
+
+.task-modal-content .current-status, .task-modal-content .close {
+  cursor: pointer;
+}
+
+.task-modal-content .statuses, .task-modal-content .priorities {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.task-modal-content .priorities li {
+  cursor: pointer;
+}
+
+.task-modal-content .labels {
+  color: #0052CC;
+  gap: .5em;
+}
+
+.task-modal-content .label {
+  background-color: #f4f5f7;
+  border-radius: .15em;
+}

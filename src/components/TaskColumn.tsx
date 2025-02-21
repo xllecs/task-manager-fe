@@ -1,23 +1,18 @@
-import { gql, useQuery } from "@apollo/client"
-import Task from "./Task"
 import { useDroppable } from "@dnd-kit/core"
 
-const GET_TASKS = gql`
-  query($status: String!) {
-    tasks(status: $status) {
-      id
-      title
-      description
-      status
-    }
-  }
-`
+import { useQuery } from "@apollo/client"
+import { GET_TASKS } from "./Queries"
 
-const TaskColumn = ({id, status}) => {
-  const { loading, error, data } = useQuery(GET_TASKS, {variables: {status: status.split(' ').join('-').toLowerCase()}})
+import Task from "./Task"
+
+import '../assets/styles/components/TaskColumn.css'
+
+const TaskColumn = ({id, title, status}) => {
+  const { loading, error, data } = useQuery(GET_TASKS, {variables: {status}})
 
   const { isOver, setNodeRef } = useDroppable({
     id: id,
+    data: { status },
   })
 
   const style = {
@@ -29,9 +24,9 @@ const TaskColumn = ({id, status}) => {
 
   return (
     <div className="task-column-wrapper" ref={setNodeRef} style={style}>
-      <div className="title">{status}</div>
+      <div className="title">{title} {data.tasks.length}</div>
       {data.tasks.map((task: { id: string, title: string, description: string, status: string }, taskIndex: number) => (
-        <Task key={taskIndex} id={task.id} title={task.title} description={task.description} status={task.status} />
+        <Task key={taskIndex} task={task} />
       ))}
     </div>
   )

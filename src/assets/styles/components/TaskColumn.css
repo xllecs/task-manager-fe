@@ -1,0 +1,9 @@
+.task-column-wrapper {
+  background-color: #F7F8F9;
+  width: 32%;
+  border-radius: .3em;
+  padding: .2em;
+  display: flex;
+  flex-direction: column;
+  gap: .2em;
+}

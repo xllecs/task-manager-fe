@@ -12,6 +12,6 @@ body {
 
 .task-columns {
   display: flex;
-  gap: 2em;
-  border: 1px solid red;
+  justify-content: space-between;
+  width: 50%;
 }
