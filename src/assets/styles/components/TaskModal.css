@@ -17,17 +17,11 @@
   justify-content: space-between;
 }
 
-.task-modal-content .current-status, .task-modal-content .close {
+.task-modal-content .current-status, .task-modal-content .current-priority, .task-modal-content .close {
   cursor: pointer;
 }
 
-.task-modal-content .statuses, .task-modal-content .priorities {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
-
-.task-modal-content .priorities li {
+.task-modal-content .statuses li, .task-modal-content .priorities li {
   cursor: pointer;
 }
 

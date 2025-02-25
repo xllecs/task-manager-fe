@@ -39,6 +39,7 @@ function App() {
           <TaskColumn id={2} title={'DONE'} status={'DONE'} />
         </div>
       </DndContext>
+      <div className="task-create">Create task</div>
       <TaskModal task={task} />
     </div>
   )

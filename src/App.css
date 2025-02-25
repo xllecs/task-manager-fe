@@ -1,6 +1,12 @@
+@font-face {
+  font-family: carving-normal;
+  src: url('./assets/fonts/carving-normal.otf');
+}
+
 body {
   padding: 0;
   margin: 0;
+  font-family: carving-normal;
 }
 
 .app-wrapper {
@@ -14,4 +20,10 @@ body {
   display: flex;
   justify-content: space-between;
   width: 50%;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }
